@@ -13,6 +13,7 @@ __pycache__/
 *~
 .vscode/
 .DS_Store
+.claude/
 
 # Only track the people-tracking packages we created/migrated.
 # Everything else under src/ is a third-party clone with its own .git.
