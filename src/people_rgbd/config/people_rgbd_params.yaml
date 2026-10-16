@@ -1,0 +1,9 @@
+# Tuning parameters for people_rgbd_node.
+# Edit this file (or point --params-file / the 'params_file' launch
+# argument at your own copy) to adapt to a different robot/environment.
+# camera_topic and use_sim_time are handled separately by the launch
+# file since camera_topic also drives topic remapping.
+/**:
+  ros__parameters:
+    frame_id: map
+    rate: 2.0
