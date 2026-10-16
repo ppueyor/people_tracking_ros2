@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>people_laser_detector</name>
+  <version>1.0.0</version>
+  <description>ROS2 port of the original rosbuild people_detector_2d_laser
+  package developed by Oscar Martinez Mozos</description>
+
+  <maintainer email="fcaballero@us.es">Prof. Fernando Caballero (University of Seville)</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,17 @@
+# Tuning parameters for laser_tracker_node.
+# Edit this file (or point --params-file / the 'params_file' launch
+# argument at your own copy) to adapt to a different robot/environment.
+# hypotheses_filename and use_sim_time are handled separately by the
+# launch file since they need computed paths / boolean substitutions.
+/**:
+  ros__parameters:
+    threshold: 0.50
+    num_hypotheses: 100
+    min_beams: 5
+    frame_id: map
+    track_distance: 0.8
+    legs_distance: 0.75
+    # Detections above max_distance are ignored. Distance in meters
+    max_distance: 5.0
+    # Max time in seconds without person updates for tracking
+    track_timeout: 3.0
