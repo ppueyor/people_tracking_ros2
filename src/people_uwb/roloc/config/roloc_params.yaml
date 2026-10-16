@@ -1,0 +1,17 @@
+# Tuning parameters for roloc_node.
+# Each tagged person tracked by a roloc instance gets its own node name
+# and its own section below (tag is the real UWB tag id worn by that
+# person/robot). use_sim_time is handled separately by the launch file.
+roloc_worker:
+  ros__parameters:
+    frame_id: map
+    update_rate: 2.0
+    name: Worker
+    tag: "0x1436393435260290"
+
+roloc_robot:
+  ros__parameters:
+    frame_id: map
+    update_rate: 2.0
+    name: Robot
+    tag: "0x14363934352b03b0"

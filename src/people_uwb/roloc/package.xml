@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>roloc</name>
+  <version>0.0.0</version>
+  <description>The roloc package</description>
+  <maintainer email="user@todo.todo">user</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <build_depend>range_msgs</build_depend>
+  <build_depend>rclcpp</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>people_msgs</build_depend>
+  <build_depend>eigen</build_depend>
+
+  <exec_depend>range_msgs</exec_depend>
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+  <exec_depend>people_msgs</exec_depend>
+  <exec_depend>eigen</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

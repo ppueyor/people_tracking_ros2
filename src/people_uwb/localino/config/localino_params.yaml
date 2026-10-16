@@ -1,0 +1,35 @@
+# Tuning parameters for localino_node.
+#
+# The anchor_list below is EXAMPLE data matching the demo cafe world's
+# anchor layout. For a real deployment, replace it with the actual
+# surveyed positions of your UWB anchors (id, frame_id, x, y, z in meters).
+# port and use_sim_time are handled separately by the launch file.
+/**:
+  ros__parameters:
+    frame_id: map
+    anchor_list:
+      N: 4
+      a0:
+        id: "0x7539353332310280"
+        frame_id: map
+        x: 3.95
+        y: 0.05
+        z: 1.0
+      a1:
+        id: "0x18313530362503C0"
+        frame_id: map
+        x: -2.15
+        y: 1.85
+        z: 1.0
+      a2:
+        id: "0x16313530363602E0"
+        frame_id: map
+        x: 4.2
+        y: 18.2
+        z: 1.0
+      a3:
+        id: "0x19313530362101F0"
+        frame_id: map
+        x: -0.9
+        y: 17.65
+        z: 1.0
