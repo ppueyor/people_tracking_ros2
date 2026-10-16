@@ -1,0 +1,24 @@
+# colcon build artifacts
+/build/
+/install/
+/log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor / OS
+*.swp
+*~
+.vscode/
+.DS_Store
+
+# Only track the people-tracking packages we created/migrated.
+# Everything else under src/ is a third-party clone with its own .git.
+src/*
+!src/arco_people_tracker/
+!src/people_laser/
+!src/people_rgbd/
+!src/people_uwb/
+!src/people_yolo/
