@@ -20,6 +20,10 @@ Every detector speaks the same message (`people_msgs/People`) on the same topic
 Kalman filter per person (weighting by per-sensor noise), and republishes merged
 tracks on `/people` tagged `FUSED`.
 
+> **Moving from simulation to a real robot?** See the real-sensor testing
+> guide: [REAL_SENSORS.md](REAL_SENSORS.md) (English) /
+> [REAL_SENSORS.es.md](REAL_SENSORS.es.md) (Español).
+
 ## Packages
 
 | Package | Lang | Role |
