@@ -4,7 +4,6 @@
 # for a different robot/camera.
 /**:
   ros__parameters:
-    frame_id: map
     # Max detections processed per second (YOLO runs on CPU; ~28 fps possible
     # with yolov4-tiny, but throttling saves CPU for the rest of the stack).
     rate: 5.0

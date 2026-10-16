@@ -5,5 +5,4 @@
 # file since camera_topic also drives topic remapping.
 /**:
   ros__parameters:
-    frame_id: map
     rate: 2.0

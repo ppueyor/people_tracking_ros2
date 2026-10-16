@@ -42,6 +42,10 @@ def generate_launch_description():
         'camera_info_topic', default_value='camera/rgb/camera_info',
         description='RGB camera_info topic published by the camera driver'
     )
+    declare_frame_id = DeclareLaunchArgument(
+        'frame_id', default_value='map',
+        description='Frame to publish detections in (e.g. map or odom)'
+    )
 
     use_sim_time = LaunchConfiguration('use_sim_time')
     params_file = LaunchConfiguration('params_file')
@@ -50,6 +54,7 @@ def generate_launch_description():
     rgb_image_topic = LaunchConfiguration('rgb_image_topic')
     depth_image_topic = LaunchConfiguration('depth_image_topic')
     camera_info_topic = LaunchConfiguration('camera_info_topic')
+    frame_id = LaunchConfiguration('frame_id')
 
     yolo_node = Node(
         package='people_yolo',
@@ -68,6 +73,7 @@ def generate_launch_description():
                 'use_sim_time': use_sim_time,
                 'model_config': model_config,
                 'model_weights': model_weights,
+                'frame_id': frame_id,
             },
         ],
     )
@@ -80,5 +86,6 @@ def generate_launch_description():
         declare_rgb_image_topic,
         declare_depth_image_topic,
         declare_camera_info_topic,
+        declare_frame_id,
         yolo_node,
     ])

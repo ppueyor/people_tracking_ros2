@@ -2,6 +2,5 @@
 # use_sim_time is handled separately by the launch file.
 /**:
   ros__parameters:
-    frame_id: map
     track_distance: 0.8
     track_timeout: 3.0

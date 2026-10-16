@@ -8,7 +8,6 @@
     threshold: 0.50
     num_hypotheses: 100
     min_beams: 5
-    frame_id: map
     track_distance: 0.8
     legs_distance: 0.75
     # Detections above max_distance are ignored. Distance in meters

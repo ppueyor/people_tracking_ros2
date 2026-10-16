@@ -28,11 +28,16 @@ def generate_launch_description():
         'scan_topic', default_value='scan',
         description='LaserScan topic to subscribe to (remapped from the node-internal /scan)'
     )
+    declare_frame_id = DeclareLaunchArgument(
+        'frame_id', default_value='map',
+        description='Frame to publish detections in (e.g. map or odom)'
+    )
 
     use_sim_time = LaunchConfiguration('use_sim_time')
     params_file = LaunchConfiguration('params_file')
     hypotheses_filename = LaunchConfiguration('hypotheses_filename')
     scan_topic = LaunchConfiguration('scan_topic')
+    frame_id = LaunchConfiguration('frame_id')
 
     laser_tracker_node = Node(
         package='people_laser_tracker',
@@ -46,6 +51,7 @@ def generate_launch_description():
             {
                 'use_sim_time': use_sim_time,
                 'hypotheses_filename': hypotheses_filename,
+                'frame_id': frame_id,
             },
         ],
     )
@@ -55,5 +61,6 @@ def generate_launch_description():
         declare_params_file,
         declare_hypotheses_filename,
         declare_scan_topic,
+        declare_frame_id,
         laser_tracker_node,
     ])

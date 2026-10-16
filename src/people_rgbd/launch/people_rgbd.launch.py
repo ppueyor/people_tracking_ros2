@@ -36,12 +36,17 @@ def generate_launch_description():
         'rgb_camera_info_topic', default_value='camera/rgb/camera_info',
         description='RGB camera_info topic published by the camera driver'
     )
+    declare_frame_id = DeclareLaunchArgument(
+        'frame_id', default_value='map',
+        description='Frame to publish detections in (e.g. map or odom)'
+    )
 
     use_sim_time = LaunchConfiguration('use_sim_time')
     params_file = LaunchConfiguration('params_file')
     rgb_image_topic = LaunchConfiguration('rgb_image_topic')
     depth_image_topic = LaunchConfiguration('depth_image_topic')
     rgb_camera_info_topic = LaunchConfiguration('rgb_camera_info_topic')
+    frame_id = LaunchConfiguration('frame_id')
 
     people_rgbd_node = Node(
         package='people_rgbd',
@@ -59,6 +64,7 @@ def generate_launch_description():
             {
                 'use_sim_time': use_sim_time,
                 'camera_topic': 'camera',
+                'frame_id': frame_id,
             },
         ],
     )
@@ -69,5 +75,6 @@ def generate_launch_description():
         declare_rgb_image_topic,
         declare_depth_image_topic,
         declare_rgb_camera_info_topic,
+        declare_frame_id,
         people_rgbd_node,
     ])

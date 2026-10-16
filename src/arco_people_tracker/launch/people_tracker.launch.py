@@ -28,11 +28,17 @@ def generate_launch_description():
         description='Output topic for fused tracks. Override this if something else in '
                     'your system (e.g. a simulator ground-truth publisher) already uses /people.'
     )
+    declare_frame_id = DeclareLaunchArgument(
+        'frame_id', default_value='map',
+        description='Frame to publish fused tracks in (e.g. map or odom). Must match '
+                    'the frame the detectors publish in.'
+    )
 
     use_sim_time = LaunchConfiguration('use_sim_time')
     params_file = LaunchConfiguration('params_file')
     detections_topic = LaunchConfiguration('detections_topic')
     people_topic = LaunchConfiguration('people_topic')
+    frame_id = LaunchConfiguration('frame_id')
 
     people_tracker_node = Node(
         package='arco_people_tracker',
@@ -44,7 +50,7 @@ def generate_launch_description():
             ('/people_detections', detections_topic),
             ('/people', people_topic),
         ],
-        parameters=[params_file, {'use_sim_time': use_sim_time}],
+        parameters=[params_file, {'use_sim_time': use_sim_time, 'frame_id': frame_id}],
     )
 
     return LaunchDescription([
@@ -52,5 +58,6 @@ def generate_launch_description():
         declare_params_file,
         declare_detections_topic,
         declare_people_topic,
+        declare_frame_id,
         people_tracker_node,
     ])
