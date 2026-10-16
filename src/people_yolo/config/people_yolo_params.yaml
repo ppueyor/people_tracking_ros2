@@ -1,0 +1,21 @@
+# Tuning parameters for yolo_detector_node.
+# use_sim_time, the model paths, and the camera topic remaps are handled by
+# the launch file. Edit this file (or pass your own via params_file) to tune
+# for a different robot/camera.
+/**:
+  ros__parameters:
+    frame_id: map
+    # Max detections processed per second (YOLO runs on CPU; ~28 fps possible
+    # with yolov4-tiny, but throttling saves CPU for the rest of the stack).
+    rate: 5.0
+    confidence_threshold: 0.4
+    nms_threshold: 0.4
+    # Valid depth range in meters for estimating a person's distance.
+    depth_min: 0.3
+    depth_max: 8.0
+    # YOLO network input size (square). 416 is the yolov4-tiny default;
+    # 320 is faster/less accurate, 608 slower/more accurate.
+    input_size: 416
+    # Set to your camera's optical frame if the driver stamps images with a
+    # non-optical frame (leave empty to use the image header frame_id).
+    camera_optical_frame: ""
